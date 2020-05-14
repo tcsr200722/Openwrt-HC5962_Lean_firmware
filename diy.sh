@@ -83,6 +83,10 @@ git clone $unblockmusic_url package/lean/luci-app-unblockmusic
 echo 'CONFIG_PACKAGE_luci-app-unblockmusic=y' >> .config
 
 
+echo '添加netdata'
+
+ echo 'CONFIG_PACKAGE_netdata=y' >> .config
+ echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
 
 
 
