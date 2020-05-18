@@ -82,10 +82,10 @@ echo '添加网易云音乐解锁最新版本'
 echo 'CONFIG_PACKAGE_luci-app-unblockmusic=y' >> .config
 
 
-echo '添加netdata'
+#echo '添加netdata'
 
- echo 'CONFIG_PACKAGE_netdata=y' >> .config
- echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
+# echo 'CONFIG_PACKAGE_netdata=y' >> .config
+ #echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
 
 
 echo '添加qBittorrent'
