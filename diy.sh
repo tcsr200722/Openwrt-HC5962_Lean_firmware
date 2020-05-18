@@ -89,6 +89,32 @@ echo '添加netdata'
  echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
 
 
+echo '添加qBittorrent'
+
+ echo 'CONFIG_PACKAGE_qBittorrent=y' >> .config
+ echo 'CONFIG_PACKAGE_luci-app-qbittorrent=y' >> .config
+ 
+ echo 'qos'
+ echo 'CONFIG_PACKAGE_luci-app-nft-qos=y' >> .config
+ 
+ 
+ 
+ 
+ echo 'CONFIG_PACKAGE_luci-app-rp-pppoe-server=y' >> .config
+
+
+
+
+
+
+
+
+
+ echo 'CONFIG_PACKAGE_luci-app-pppoe-relay=y' >> .config
+ echo 'CONFIG_PACKAGE_luci-app-transmission=y' >> .config
+
+
+
 
 
 
