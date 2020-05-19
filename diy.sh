@@ -44,55 +44,7 @@ echo "修改wifi名称"
 
 sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-
-echo '添加wifi计划插件'
-rm -rf package/lean/luci-app-wifischedule
-git clone $wifischedule_url package/lean/luci-app-wifischedule
-echo 'CONFIG_PACKAGE_luci-app-wifischedule=y' >> .config
-
-
-
-
-
-
-echo '添加OpenClash'
-git clone $openClash_url package/lean/luci-app-openclash 
-echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
-echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
-
-
-
-echo '添加amule插件'
-echo 'CONFIG_PACKAGE_luci-app-amule=y' >> .config
-
-
-
-
-echo '添加高级重启插件'
-rm -rf package/lean/luci-app-autoreboot
-git clone $autoreboot_url package/lean/luci-app-autoreboot
-echo 'CONFIG_PACKAGE_luci-app-autoreboot=y' >> .config
-
-
-
-
-
-
-
-
-
-echo '添加网易云音乐解锁最新版本'
-rm -rf package/lean/luci-app-unblockmusic
-git clone $unblockmusic_url package/lean/luci-app-unblockmusic
-echo 'CONFIG_PACKAGE_luci-app-unblockmusic=y' >> .config
-
-
-echo '添加netdata'
-rm -rf package/lean/netdata
- git clone https://github.com/netdata/netdata package/lean/netdata
- echo 'CONFIG_PACKAGE_netdata=y' >> .config
- echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
-
+ 
 
 
 
