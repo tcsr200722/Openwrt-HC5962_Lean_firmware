@@ -7,29 +7,30 @@
 #=================================================
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-#git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git package/mentohust
-#git clone https://github.com/BoringCat/luci-app-mentohust.git package/luci-app-mentohust
-#git clone https://github.com/rosywrt/luci-theme-rosy package/luci-theme-rosy
+git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git package/mentohust
+git clone https://github.com/BoringCat/luci-app-mentohust.git package/luci-app-mentohust
+git clone https://github.com/rosywrt/luci-theme-rosy package/luci-theme-rosy
 git clone https://github.com/openwrt-develop/luci-theme-atmaterial package/luci-theme-atmaterial
-#git clone https://github.com/openwrt-dev/po2lmo.git
+git clone https://github.com/openwrt-dev/po2lmo.git
 
 device_name='HC5962'
 
 wifi_name='HiWiFi'
 theme_argon='https://github.com/sypopo/luci-theme-argon-mc.git'  # 主题地址
 openClash_url='https://github.com/vernesong/OpenClash.git'       # OpenClash包地址 
-#lienol_url='https://github.com/Lienol/openwrt-package.git'       # Lienol 包地址
-#adguardhome_url='https://github.com/rufengsuixing/luci-app-adguardhome.git' # adguardhome 包地址
+lienol_url='https://github.com/Lienol/openwrt-package.git'       # Lienol 包地址
+adguardhome_url='https://github.com/rufengsuixing/luci-app-adguardhome.git' # adguardhome 包地址
 
 #插件源码
-#wifischedule_url='https://github.com/newkit/luci-app-wifischedule.git' # wifi计划插件地址
-#autoreboot_url='https://github.com/awesome-openwrt/luci-app-autoreboot.git' #高级重启插件地址
-#unblockmusic_url='https://github.com/maxlicheng/luci-app-unblockmusic.git' #网易云音乐解锁地址
+wifischedule_url='https://github.com/newkit/luci-app-wifischedule.git' # wifi计划插件地址
+autoreboot_url='https://github.com/awesome-openwrt/luci-app-autoreboot.git' #高级重启插件地址
+unblockmusic_url='https://github.com/maxlicheng/luci-app-unblockmusic.git' #网易云音乐解锁地址
 
 
 
 
 
+wifischedule_url='https://github.com/newkit/luci-app-wifischedule.git' # wifi计划插件地址
 
 
 
@@ -44,9 +45,9 @@ sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.
 
 
 echo '添加wifi计划插件'
-#git clone $wifischedule_url package/lean/luci-app-wifischedule
+git clone $wifischedule_url package/lean/luci-app-wifischedule
 echo 'CONFIG_PACKAGE_luci-app-wifischedule=y' >> .config
-echo 'CONFIG_PACKAGE_kmod-iwinfo=y' >> .config
+
 
 
 
@@ -66,7 +67,7 @@ echo 'CONFIG_PACKAGE_luci-app-amule=y' >> .config
 
 
 echo '添加高级重启插件'
-#git clone $autoreboot_url package/lean/luci-app-autoreboot
+git clone $autoreboot_url package/lean/luci-app-autoreboot
 echo 'CONFIG_PACKAGE_luci-app-autoreboot=y' >> .config
 
 
@@ -78,47 +79,21 @@ echo 'CONFIG_PACKAGE_luci-app-autoreboot=y' >> .config
 
 
 echo '添加网易云音乐解锁最新版本'
-#git clone $unblockmusic_url package/lean/luci-app-unblockmusic
+git clone $unblockmusic_url package/lean/luci-app-unblockmusic
 echo 'CONFIG_PACKAGE_luci-app-unblockmusic=y' >> .config
 
 
-#echo '添加netdata'
+echo '添加netdata'
 
-# echo 'CONFIG_PACKAGE_netdata=y' >> .config
- #echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
-
-
-echo '添加qBittorrent'
-
- echo 'CONFIG_PACKAGE_qBittorrent=y' >> .config
- echo 'CONFIG_PACKAGE_luci-app-qbittorrent=y' >> .config
- 
- echo 'qos'
- echo 'CONFIG_PACKAGE_luci-app-nft-qos=y' >> .config
- 
- 
- 
- 
- echo 'CONFIG_PACKAGE_luci-app-rp-pppoe-server=y' >> .config
+ echo 'CONFIG_PACKAGE_netdata=y' >> .config
+ echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
 
 
 
 
 
 
-
-
-
- echo 'CONFIG_PACKAGE_luci-app-pppoe-relay=y' >> .config
- echo 'CONFIG_PACKAGE_luci-app-transmission=y' >> .config
-
-
-
-
-
-
-
-#pushd po2lmo
+pushd po2lmo
 make && sudo make install
 popd
 ./scripts/feeds update -a
