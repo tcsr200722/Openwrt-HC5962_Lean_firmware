@@ -47,7 +47,6 @@ sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.
 echo '添加wifi计划插件'
 git clone $wifischedule_url package/lean/luci-app-wifischedule
 echo 'CONFIG_PACKAGE_luci-app-wifischedule=y' >> .config
-echo 'CONFIG_PACKAGE_kmod-iwinfo=y' >> .config
 
 
 
@@ -84,10 +83,10 @@ git clone $unblockmusic_url package/lean/luci-app-unblockmusic
 echo 'CONFIG_PACKAGE_luci-app-unblockmusic=y' >> .config
 
 
-echo '添加netdata'
+#echo '添加netdata'
 
- echo 'CONFIG_PACKAGE_netdata=y' >> .config
- echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
+ #echo 'CONFIG_PACKAGE_netdata=y' >> .config
+ #echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
 
 
 
