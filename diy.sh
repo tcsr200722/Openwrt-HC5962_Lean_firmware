@@ -85,7 +85,7 @@ echo 'CONFIG_PACKAGE_luci-app-unblockmusic=y' >> .config
 
  
 
-
+echo 'CONFIG_PACKAGE_luci-app-qos=y' >> .config
 
 
 
