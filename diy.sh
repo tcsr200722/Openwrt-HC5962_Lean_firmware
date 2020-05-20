@@ -87,6 +87,7 @@ echo '添加netdata'
 
  echo 'CONFIG_PACKAGE_netdata=y' >> .config
  echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
+ echo 'CONFIG_PACKAGE_luci-i18n-netdata-zh-cn=y' >> .config
 
 
 
