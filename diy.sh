@@ -7,7 +7,6 @@
 #=================================================
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.199.1/g' package/base-files/files/bin/config_generate
 git clone https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk.git package/mentohust
 git clone https://github.com/BoringCat/luci-app-mentohust.git package/luci-app-mentohust
 git clone https://github.com/rosywrt/luci-theme-rosy package/luci-theme-rosy
@@ -44,7 +43,51 @@ echo "修改wifi名称"
 
 sed -i "s/OpenWrt/$wifi_name/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
- 
+
+echo '添加wifi计划插件'
+git clone $wifischedule_url package/lean/luci-app-wifischedule
+echo 'CONFIG_PACKAGE_luci-app-wifischedule=y' >> .config
+
+
+
+
+
+
+echo '添加OpenClash'
+git clone $openClash_url package/lean/luci-app-openclash 
+echo 'CONFIG_PACKAGE_luci-app-openclash=y' >> .config
+echo 'CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y'  >> .config
+
+
+
+echo '添加amule插件'
+echo 'CONFIG_PACKAGE_luci-app-amule=y' >> .config
+
+
+
+
+echo '添加高级重启插件'
+git clone $autoreboot_url package/lean/luci-app-autoreboot
+echo 'CONFIG_PACKAGE_luci-app-autoreboot=y' >> .config
+
+
+
+
+
+
+
+
+
+echo '添加网易云音乐解锁最新版本'
+git clone $unblockmusic_url package/lean/luci-app-unblockmusic
+echo 'CONFIG_PACKAGE_luci-app-unblockmusic=y' >> .config
+
+
+echo '添加netdata'
+
+ echo 'CONFIG_PACKAGE_netdata=y' >> .config
+ echo 'CONFIG_PACKAGE_luci-app-netdata=y' >> .config
+
 
 
 
